@@ -1,0 +1,56 @@
+:root {
+  --primary-color: black;
+  --secondary-color: rgb(24 24 27);
+  --border : rgba(63, 63, 70, 0.4);
+  --title: rgb(244 244 245);
+  --subtitle: rgb(161 161 170);
+  --navbg: rgb(39 39 42);
+  --blue: rgb(93 188 252);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.out-container {
+  width: 80%;
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .out-container {
+    width: 90%;
+  }
+  
+}
+
+.in-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.divider {
+  border-bottom: 1px solid var(--border);
+}
