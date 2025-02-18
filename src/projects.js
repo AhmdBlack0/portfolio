@@ -1,5 +1,6 @@
 import { FaHtml5 } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
 
 const projects = [
   {
@@ -20,6 +21,15 @@ const projects = [
     by: "html",
     icons: [FaHtml5, IoLogoCss3],
     github: "",
+  },
+  {
+    id: 3,
+    title: "Zad Elmuslim",
+    image: "/zad-elmuslim.png",
+    url: "https://zad-elmuslim.vercel.app/",
+    by: "react",
+    icons: [FaReact],
+    github: "https://github.com/AhmdBlack0/zad-elmuslim",
   },
 ];
 

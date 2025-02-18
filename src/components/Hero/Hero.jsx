@@ -24,9 +24,6 @@ function Hero() {
                     <li><a href=""><SiGmail className='hero-icons' title='gmail'/></a></li>
                 </ul>
             </div>
-            <div className="hero-sec-right">
-                test
-            </div>
         </div>
     )
 }
