@@ -3,7 +3,6 @@
     margin-top: 100px;
 }
 
-
 .about-left-sec {
     margin-right: 100px;
 }
@@ -42,6 +41,10 @@
         flex-direction: column-reverse;
     }
     .about-profile-image-container {
-        width: 300px;
+        width: 270px;
     }
+    .about-left-sec h1 {
+        font-size: 35px;
+    }
+
 }
