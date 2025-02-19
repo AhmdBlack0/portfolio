@@ -3,9 +3,6 @@
     margin-top: 100px;
 }
 
-.about-profile-image-container {
-    width: 350px;
-}
 
 .about-left-sec {
     margin-right: 100px;
@@ -30,6 +27,10 @@
     color: #aaa;
 }
 
+.about-profile-image-container {
+    width: 350px;
+}
+
 .about-profile-image-container .about-profile-image {
     width: 100%;
     border-radius: 8px;
@@ -40,5 +41,7 @@
     .about {
         flex-direction: column-reverse;
     }
-
+    .about-profile-image-container {
+        width: 300px;
+    }
 }
