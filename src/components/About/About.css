@@ -1,0 +1,38 @@
+.about {
+    display: flex;
+    margin-top: 100px;
+}
+
+.about-profile-image-container {
+    width: 350px;
+}
+
+.about-left-sec {
+    margin-right: 100px;
+}
+
+.about-left-sec h1 {
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 35px;
+}
+
+.about-info p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #aaa;
+}
+
+.about-profile-image-container .about-profile-image {
+    width: 100%;
+    border-radius: 8px;
+    rotate: 2deg;
+}
+
+@media (max-width: 1200px) {
+    .about {
+        flex-direction: column-reverse;
+    }
+
+}

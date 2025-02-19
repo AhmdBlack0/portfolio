@@ -1,15 +1,16 @@
-import profile_image from '../../imgs/cropped_image.png'
+import profile_image_1 from '/profile_image_1.png'
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import './Hero.css'
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 function Hero() {
     return (
         <div className="hero in-container">
             <div className="hero-sec-left">
                 <div className='profile-image-container'>
-                    <img className='hero-profile-image' src={profile_image} alt="" />
+                    <img className='hero-profile-image' src={profile_image_1} alt="" />
                 </div>
                 <h1>Frontend Developer</h1>
                 <p className='hero-description'>
@@ -18,11 +19,7 @@ function Hero() {
                     (MongoDB, Express.js, React.js, and Node.js).
                 </p>
                 <p>Let's build something amazing together!</p>
-                <ul className='hero-links'>
-                    <li><a href=""><FaGithub className='hero-icons' title='github'/></a></li>
-                    <li><a href=""><FaLinkedin className='hero-icons' title='linkedin'/></a></li>
-                    <li><a href=""><SiGmail className='hero-icons' title='gmail'/></a></li>
-                </ul>
+                <SocialLinks />
             </div>
         </div>
     )

@@ -18,11 +18,11 @@ function Header() {
                 showModel && 
                 <div className='pop-nav'>
                     <ul className='pop-nav-links'>
-                        <li><Link to='/'>home</Link></li>
-                        <li><Link to={'/about'}>about</Link></li>
-                        <li><Link to={'/projects'}>projects</Link></li>
+                        <li><Link to='/' onClick={() => setShowModel(false)}>home</Link></li>
+                        <li><Link to={'/about'} onClick={() => setShowModel(false)}>about</Link></li>
+                        <li><Link to={'/projects'} onClick={() => setShowModel(false)}>projects</Link></li>
                         <IoClose onClick={() => setShowModel(false)} className='close-nav icon'/>
-                        <li><Link to='/content'>contact</Link></li>
+                        <li><Link to='/content' onClick={() => setShowModel(false)}>contact</Link></li>
                     </ul>
                 </div>
             }
