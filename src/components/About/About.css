@@ -11,6 +11,12 @@
     margin-right: 100px;
 }
 
+@media (max-width: 767px) {
+    .about-left-sec {
+        width: 100%;
+    }
+}
+
 .about-left-sec h1 {
     font-size: 45px;
     line-height: 1.2;
