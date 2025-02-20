@@ -3,12 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #aaa;
+    color: var(--subtitle);
     padding: 50px 0;
 }
 
 .footer a {
-    color: white;
+    color: var(--title);
     margin-left: 4px;
 }
 

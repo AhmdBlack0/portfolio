@@ -4,12 +4,15 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
 import { BsMoonStars } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import { CiLight } from "react-icons/ci";
+
 
 
 
 function Header() {
     const [showModel, setShowModel] = useState(false);
     const [active, setActive] = useState("home");
+    const [darkmode, setDarkMode] = useState(true)
     return (
         <div className='header'>
             <HiMiniBars3  onClick={() => setShowModel(true)} className='show-nav icon'/>
@@ -32,7 +35,10 @@ function Header() {
                 <li><Link to='/projects' className={active === "projects" ? "active-nav" : ""} onClick={() => setActive('projects')}>projects</Link></li>
                 <li><Link to='/contact' className={active === "contact" ? "active-nav" : ""} onClick={() => setActive('contact')}>contact</Link></li>
             </ul>
-            <button><BsMoonStars className='icon' /></button>
+            <button onClick={() => {
+                document.querySelector("body").classList.toggle("light-mode")
+                setDarkMode(!darkmode)
+            }}>{darkmode ? <BsMoonStars className='icon' />: <CiLight className='icon'/>}</button>
         </div>
     )
 }

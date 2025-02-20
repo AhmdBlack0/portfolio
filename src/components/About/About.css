@@ -17,13 +17,14 @@
     font-size: 45px;
     line-height: 1.2;
     margin-bottom: 35px;
+    color: var(--title);
 }
 
 .about-info p {
     font-size: 17px;
     line-height: 1.5;
     margin-bottom: 30px;
-    color: #aaa;
+    color: var(--subtitle);
 }
 
 .about-profile-image-container {

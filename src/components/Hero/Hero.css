@@ -14,8 +14,15 @@
 }
 
 .hero .hero-description {
-    color: #aaa;
+    color: var(--subtitle);
     margin: 22px 0;
     line-height: 1.66;
 }
 
+.hero-title {
+    color: var(--title);
+}
+
+.lets-p {
+    color: var(--title);
+}

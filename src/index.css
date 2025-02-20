@@ -8,6 +8,17 @@
   --blue: rgb(93 188 252);
 }
 
+.light-mode {
+  --primary-color: white;
+  --secondary-color: rgb(250, 250, 250);
+  --border: rgba(200, 200, 200, 0.6);
+  --title: rgb(30, 30, 30);
+  --subtitle: rgb(100, 100, 110);
+  --navbg: rgb(230, 230, 235);
+  --blue: rgb(0, 122, 255);
+}
+
+
 * {
   margin: 0;
   padding: 0;
