@@ -108,3 +108,11 @@
 .card-links a:hover {
     opacity: 1;
 }
+
+.project-icons {
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}

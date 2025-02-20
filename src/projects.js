@@ -1,6 +1,7 @@
 import { FaHtml5 } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import { FaReact } from "react-icons/fa";
+import { FaJsSquare } from "react-icons/fa";
 
 const projects = [
   {
@@ -30,6 +31,15 @@ const projects = [
     by: "react",
     icons: [FaReact],
     github: "https://github.com/AhmdBlack0/zad-elmuslim",
+  },
+  {
+    id: 4,
+    title: "Business Landing Page",
+    image: "/business-landing-page.png",
+    url: "https://ahmdblack0.github.io/business-landing-page/",
+    by: "javascript",
+    icons: [FaJsSquare],
+    github: "https://github.com/AhmdBlack0/business-landing-page",
   },
 ];
 

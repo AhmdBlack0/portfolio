@@ -37,9 +37,11 @@ function Projects() {
                             <img className="project-image" src={project.image} />
                             <div className="project-info">
                                 <h3>{project.title}</h3>
-                                {project.icons.map((Icon, index) => (
-                                    <Icon key={index} />
-                                ))}
+                                <div className="project-icons">
+                                    {project.icons.map((Icon, index) => (
+                                        <Icon key={index} />
+                                    ))}
+                                </div>
                             </div>
                             <div className="card-links">
                                 <Link title="Live Demo" target="_blank" to={`${project.url}`}><IoIosLink /></Link>
