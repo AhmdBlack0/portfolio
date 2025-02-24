@@ -7,13 +7,19 @@ import { SiGmail } from "react-icons/si";
 function SocialLinks() {
     return (
         <ul className='social-links'>
-            <li><Link to=""><FaGithub className='hero-icons' title='github'/></Link></li>
+            <li><Link
+                to="https://github.com/AhmdBlack0"
+                target='_blank'
+            ><FaGithub className='hero-icons' title='github' /></Link></li>
             <li><Link
                 target='_blank'
                 to="https://www.linkedin.com/in/ahmed-osama-9020052bb/">
                 <FaLinkedin className='hero-icons' title='linkedin' />
             </Link></li>
-            <li><a href=""><SiGmail className='hero-icons' title='gmail'/></a></li>
+            <li><Link
+                target='_blank'
+                to="mailto:ahmdBlack.0@gmail.com"
+            ><SiGmail className='hero-icons' title='gmail' /></Link></li>
         </ul>
     )
 }
