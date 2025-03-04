@@ -41,6 +41,15 @@ const projects = [
     icons: [FaJsSquare],
     github: "https://github.com/AhmdBlack0/business-landing-page",
   },
+  {
+    id: 5,
+    title: "Social Media App",
+    image: "/social-media-app.png",
+    url: "https://social-media-app--phi.vercel.app/",
+    by: "react",
+    icons: [FaReact],
+    github: "https://github.com/AhmdBlack0/social-media-app",
+  },
 ];
 
 export default projects;
