@@ -151,7 +151,7 @@ const EcommerceAPI = () => {
                             - role (allowed values: 'admin' or 'user', default: 'user')`}
                             method="POST"
                             endpoint="/api/register"
-                            img={'/public/register-api.png'}
+                            img={'/register-api.png'}
                     />
 
                         
@@ -165,7 +165,7 @@ const EcommerceAPI = () => {
                         - password`}
                         method="POST"
                             endpoint="/api/login"
-                            img={'/public/login-api.png'}
+                            img={'/login-api.png'}
                     />
 
                         
