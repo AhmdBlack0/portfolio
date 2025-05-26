@@ -4,8 +4,18 @@ import { FaReact } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
 
 const projects = [
+  {
+    id: 6,
+    title: "E-commerce API",
+    image: "/ecommerceAPI.png",
+    url: "/ecommerce-api",
+    by: "node",
+    icons: [FaNodeJs, SiMongodb, SiExpress],
+    github: "",
+  },
   {
     id: 6,
     title: "E-commerce MERN",
