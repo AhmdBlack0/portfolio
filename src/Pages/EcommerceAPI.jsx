@@ -53,13 +53,13 @@ const EcommerceAPI = () => {
                 <span className={`method-badge ${method.toLowerCase()}-req`}>{method}</span>
                 <code className="endpoint-url">{endpoint}</code>
             </div>
+            {img && <img src={img} alt={title} className="api-image" />}
             {(authRequired || adminOnly) && (
                 <div className="auth-note">
                     <i className={adminOnly ? "fas fa-shield-alt" : "fas fa-lock"}></i>
                     {adminOnly ? "Admin privileges required" : "Authentication required"}
                 </div>
             )}
-            {img && <img src={img} alt={title} className="api-image" />}
         </div>
     );
     
@@ -108,7 +108,8 @@ const EcommerceAPI = () => {
                                 \n\nFor the image, provide a valid URL from the internet. File upload support may be added later.`}
                                 method="POST"
                                 endpoint="/api/products"
-                                authRequired={true}
+                            authRequired={true}
+                            img={'/addProduct.png'}
                                 />
 
                         
@@ -186,6 +187,101 @@ const EcommerceAPI = () => {
                             endpoint="/api/users/{userId}"
                             adminOnly={true}
                         />
+                    </div>
+                </div>
+
+
+                <div className="section">
+                    <h2 className="section-title">
+                        <i className="fas fa-user-shield"></i>
+                        Cart
+                    </h2>
+                    <div className="api-grid">
+                    <APICard 
+                        number="1"
+                        title="Get Cart Items"
+                        description={`Retrieve all items in the user's shopping cart. Requires authentication.`}
+                        method="GET"
+                            endpoint="/api/users/{userId}/cart"
+                            authRequired={true}
+
+                    />
+
+                        
+                    <APICard 
+                        number="2"
+                        title="Add Item To Cart"
+                        description={`Add a product to the user's shopping cart.
+                        Required fields:
+                        - productId
+                        - quantity (default: 1)`}
+                        method="POST"
+                            endpoint="/api/users/{userId}/cart"
+                            img={'/addToCart.png'}
+                            authRequired={true}
+
+                    />
+
+                        
+                        <APICard 
+                            number="3"
+                            title="Update Cart Item"
+                            description={`Update the quantity of a specific item in the user's cart.`}
+                            method="PATCH"
+                            endpoint="/api/users/:userId/cart/:productId"
+                            img={'/updatedCart.png'}
+                            authRequired={true}
+                        />
+
+                        <APICard 
+                            number="4"
+                            title="Delete Cart Item"
+                            description={`Remove a specific item from the user's cart.`}
+                            method="DELETE"
+                            endpoint="/api/users/:userId/cart/:productId"
+                            authRequired={true}
+                        />
+
+                        
+                    </div>
+                </div>
+
+                <div className="section">
+                    <h2 className="section-title">
+                        <i className="fas fa-user-shield"></i>
+                        WatchList
+                    </h2>
+                    <div className="api-grid">
+
+                        <APICard 
+                            number="1"
+                            title="Get WatchList Items"
+                            description={`Retrieve all items in the user's watchList.`}
+                            method="GET"
+                            endpoint="/api/users/{userId}/watchList"
+                            authRequired={true}
+                        />
+
+                        <APICard 
+                            number="2"
+                            title="Add Item To WatchList"
+                            description={`Add a product to the user's watchList. fields:
+                            - productId`}
+                            method="POST"
+                            endpoint="/api/users/{userId}/watchList"
+                            authRequired={true}
+                            img={'/addToWatchList.png'}
+                        />
+
+                        <APICard 
+                            number="3"
+                            title="Delete Item From WatchList"
+                            description={`Remove a specific item from the user's watchList.`}
+                            method="DELETE"
+                            endpoint="/api/users/{userId}/watchList/{productId}"
+                            authRequired={true}
+                        />
+                        
                     </div>
                 </div>
 
