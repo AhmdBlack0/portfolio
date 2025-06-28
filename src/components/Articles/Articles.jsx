@@ -12,6 +12,15 @@ function Articles() {
                     <span className='read-more'>Read more</span>
                 </div>
             </Link>
+            <Link to={'/social-media-api'} className='article'>
+                <h3>Social Media API Documentation</h3>
+                <p>Complete guide to building and implementing a robust Social Media API with Node.js and Express.</p>
+                <div className='article-meta'>
+                    <span>10 min read</span>
+                    <span className='read-more'>Read more</span>
+                </div>
+            </Link>
+            
             
         </div>
     )
