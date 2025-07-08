@@ -13,7 +13,7 @@ function SocialLinks() {
             ><FaGithub className='hero-icons' title='github' /></Link></li>
             <li><Link
                 target='_blank'
-                to="https://www.linkedin.com/in/ahmed-osama-9020052bb/">
+                to="/">
                 <FaLinkedin className='hero-icons' title='linkedin' />
             </Link></li>
             <li><Link
