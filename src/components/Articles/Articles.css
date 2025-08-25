@@ -1,124 +1,90 @@
-/* Articles Component Styles */
 .articles {
-    display: grid;
-    gap: 2rem;
-    padding: 2rem 0;
-    margin-top: 2rem;
-  }
-  
-  .article {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: #ffffff;
-    display: block;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-  }
-  
-  .article::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #00d4aa, #00a8ff);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  
-  .article:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .article:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(0, 212, 170, 0.3);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 212, 170, 0.2);
-  }
-  
-  .article h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    line-height: 1.4;
-  }
-  
-  .article p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  .article .article-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .article .read-more {
-    color: #00d4aa;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: gap 0.3s ease;
-  }
-  
-  .article:hover .read-more {
-    gap: 0.75rem;
-  }
-  
-  .article .read-more::after {
-    content: '→';
-    transition: transform 0.3s ease;
-  }
-  
-  .article:hover .read-more::after {
-    transform: translateX(3px);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .articles {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      padding: 1.5rem 0;
-    }
-    
-    .article {
-      padding: 1.5rem;
-    }
-    
-    .article h3 {
-      font-size: 1.3rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .articles {
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-    
-    .article {
-      padding: 1.25rem;
-    }
-    
-    .article h3 {
-      font-size: 1.2rem;
-    }
-  }
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.article {
+  background: var(--secondary-color);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--title);
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4aa, var(--blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.article:hover::before {
+  transform: scaleX(1);
+}
+
+.article:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--hover-border);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.2);
+}
+
+.article h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--title);
+  line-height: 1.4;
+}
+
+.article p {
+  color: var(--subtitle);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.article .article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--subtitle);
+}
+
+.article .read-more {
+  color: var(--blue);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.article:hover .read-more {
+  gap: 0.75rem;
+}
+
+.article .read-more::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.article:hover .read-more::after {
+  transform: translateX(3px);
+}

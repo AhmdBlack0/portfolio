@@ -14,14 +14,11 @@ function About() {
                         fascinated by how a few lines of code can bring something to life on a screen.
                     </p>
                     <p>
-                        I’m a Computer Science student, currently pursuing my degree since 2022 and expected to graduate in 2026. 
-                        Throughout my journey, I’ve gained knowledge in web technologies, specializing in frontend development 
-                        and the MERN stack. I enjoy building cool, responsive, and user-friendly websites that provide great 
-                        experiences.
+                        I’ve loved building and creating for as long as I can remember, fascinated by how a few lines of code can bring something to life. I’m a Computer Science student (2022–2026), specializing in backend development with Node.js, Express.js, and MongoDB. 
                     </p>
                     <p>
-                        I’m always eager to learn new technologies, improve my skills, and take on challenging projects. 
-                        My goal is to create innovative and impactful digital experiences that make a difference.
+                        
+                        I enjoy building scalable applications, integrating APIs, and working with authentication and file storage systems. I’m always eager to learn new technologies, improve my skills, and take on challenging projects that make an impact
                     </p>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import Projects from "./components/Projects/Projects"
 import { Route, Routes } from "react-router-dom"
 import EcommerceAPI from "./Pages/EcommerceAPI/EcommerceAPI"
 import SocailMediaAPI from "./Pages/SocialMediaAPI/SocialMediaAPI"
+import Contact from "./Pages/Contact/Contact"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/ecommerce-api" element={<EcommerceAPI />} />
         <Route path="/social-media-api" element={<SocailMediaAPI />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <div className="divider" />
       <Footer />

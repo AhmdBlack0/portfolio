@@ -11,11 +11,10 @@ function Hero() {
                     <div className='profile-image-container'>
                         <img className='hero-profile-image' src={profile_image_1} alt="" />
                     </div>
-                    <h1 className='hero-title'>Frontend Developer</h1>
+                    <h1 className='hero-title'>Backend Developer</h1>
                     <p className='hero-description'>
                         I’m <strong>Ahmed Osama</strong>, a passionate Computer Science student at Zagazig University.
-                        I specialize in building dynamic and responsive web applications using the <strong>MERN Stack</strong> 
-                        (MongoDB, Express.js, React.js, and Node.js).
+                        I specialize in building scalable and efficient backend applications using <strong>Node.js, Express.js</strong>.
                     </p>
                     <p className='lets-p'>Let’s build something amazing together!</p>
                     <SocialLinks />
