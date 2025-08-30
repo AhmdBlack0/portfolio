@@ -20,6 +20,14 @@ function Articles() {
                     <span className='read-more'>Read more</span>
                 </div>
             </Link>
+            <Link to={'/habit-tracker-api'} className='article'>
+                <h3>Habit Tracker API Documentation</h3>
+                <p>Complete guide to building and implementing a robust Habit Tracker API with Node.js and Express.</p>
+                <div className='article-meta'>
+                    <span>15 min read</span>
+                    <span className='read-more'>Read more</span>
+                </div>
+            </Link>
             
             
         </div>

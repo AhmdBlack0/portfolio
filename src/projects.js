@@ -8,6 +8,15 @@ import { SiExpress } from "react-icons/si";
 
 const projects = [
   {
+    id: 9,
+    title: " Habit Tracker API",
+    image: "/habit-tracker-api-image.jpg",
+    url: "/habit-tracker-api",
+    by: "node",
+    icons: [FaNodeJs, SiMongodb, SiExpress],
+    github: "",
+  },
+  {
     id: 8,
     title: " Social Media API",
     image: "/social-media-api-image.png",
