@@ -8,6 +8,7 @@ import EcommerceAPI from "./Pages/EcommerceAPI/EcommerceAPI"
 import SocailMediaAPI from "./Pages/SocialMediaAPI/SocialMediaAPI"
 import Contact from "./Pages/Contact/Contact"
 import HabitTrackerAPI from "./Pages/HabitTracker/HabitTrackerAPI"
+import ToDoListAPI from "./Pages/ToDoListAPI/ToDoListAPI"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/ecommerce-api" element={<EcommerceAPI />} />
         <Route path="/social-media-api" element={<SocailMediaAPI />} />
         <Route path="/habit-tracker-api" element={<HabitTrackerAPI />} />
+        <Route path="/to-do-list-api" element={<ToDoListAPI />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <div className="divider" />

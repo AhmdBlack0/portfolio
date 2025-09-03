@@ -68,9 +68,9 @@ const SocailMediaAPI = () => {
         <div className="api">
             <div className="container">
                 <div className="header-api">
-                    <h1><i className="fas fa-shopping-cart"></i> Social Media API</h1>
+                    <h1><i className="fas fa-share-alt"></i> Social Media API</h1>
                     <p>
-                        This API provides endpoints for managing users, products, and their interactions in a social media context.
+                        This documentation provides a comprehensive overview of the Social Media API, including endpoints, request methods, parameters, and response formats. The API allows developers to integrate social media functionalities into their applications, enabling features such as user authentication, profile management, posting content, and interacting with other users.
                     </p>
                 </div>
 
@@ -81,8 +81,8 @@ const SocailMediaAPI = () => {
 
                 <div className="section">
                     <h2 className="section-title">
-                        <i className="fas fa-box"></i>
-                        Users 
+                        <i className="fas fa-user-lock"></i>
+                        AUTH 
                     </h2>
                     <div className="api-grid">
                         <APICard 
@@ -127,7 +127,7 @@ const SocailMediaAPI = () => {
 
                 <div className="section">
                     <h2 className="section-title">
-                        <i className="fas fa-box"></i>
+                        <i className="fas fa-user"></i>
                         Users 
                     </h2>
                     <div className="api-grid">
@@ -174,7 +174,7 @@ const SocailMediaAPI = () => {
                     </div>
                 <div className="section">
                     <h2 className="section-title">
-                        <i className="fas fa-box"></i>
+                        <i className="fas fa-file-alt"></i>
                         Posts
                     </h2>
                     <div className="api-grid">
