@@ -1,252 +1,144 @@
-import { useState, useEffect } from 'react';
-import './SociallMediaAPI.css';
+import { useEffect } from "react";
+import "./SocialMediaAPI.css";
 
-const SocailMediaAPI = () => {
-    const [showToast, setShowToast] = useState(false);
+// ✅ Reusable API Card Component
+const APICard = ({ number, title, description, method, img, endpoint, authRequired, adminOnly }) => (
+  <div className="api-card">
+    <h3 className="api-header">
+      <span className="api-number">{number}</span> {title}
+    </h3>
+    <p className="api-description">{description}</p>
 
-    const baseUrl = 'https://social-media-api-fhdx.vercel.app/';
+    <div className="api-endpoint">
+      <span className={`method-badge ${method.toLowerCase()}-req`}>{method}</span>
+      <code className="endpoint-url">{endpoint}</code>
+    </div>
 
+    {img && <img src={img} alt={`${title} example`} className="api-image" />}
 
-    useEffect(() => {
-        if (showToast) {
-            const timer = setTimeout(() => {
-                setShowToast(false);
-            }, 3000);
-            return () => clearTimeout(timer);
-        }
-    }, [showToast]);
+    {(authRequired || adminOnly) && (
+      <div className="auth-note">
+        <i className={adminOnly ? "fas fa-shield-alt" : "fas fa-lock"}></i>
+        {adminOnly ? " Admin privileges required" : " Authentication required"}
+      </div>
+    )}
+  </div>
+);
 
-    useEffect(() => {
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+// ✅ Main Component
+const SocialMediaAPI = () => {
+  const baseUrl = "https://social-media-api-nodejs-six.vercel.app/api/";
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.api-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+  // ✨ Fade-in animation on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
         });
-
-        return () => observer.disconnect();
-    }, []);
-
-    const APICard = ({ number, title, description, method, img, endpoint, authRequired, adminOnly }) => (
-        <div className="api-card">
-            <h3 className="api-header">
-                <span className="api-number">{number}</span>
-                {title}
-            </h3>
-            <p className="api-description">{description}</p>
-            <div className="api-endpoint">
-                <span className={`method-badge ${method.toLowerCase()}-req`}>{method}</span>
-                <code className="endpoint-url">{endpoint}</code>
-            </div>
-            {img && <img src={img} alt={title} className="api-image" />}
-            {(authRequired || adminOnly) && (
-                <div className="auth-note">
-                    <i className={adminOnly ? "fas fa-shield-alt" : "fas fa-lock"}></i>
-                    {adminOnly ? "Admin privileges required" : "Authentication required"}
-                </div>
-            )}
-        </div>
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
-    
 
-    return (
-        <div className="api">
-            <div className="container">
-                <div className="header-api">
-                    <h1><i className="fas fa-share-alt"></i> Social Media API</h1>
-                    <p>
-                        This documentation provides a comprehensive overview of the Social Media API, including endpoints, request methods, parameters, and response formats. The API allows developers to integrate social media functionalities into their applications, enabling features such as user authentication, profile management, posting content, and interacting with other users.
-                    </p>
-                </div>
+    const cards = document.querySelectorAll(".api-card");
+    cards.forEach((card) => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(20px)";
+      card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      observer.observe(card);
+    });
 
-                <div className="base-url">
-                    <h3><i className="fas fa-globe"></i> Base URL</h3>
-                    <code>{baseUrl}</code>
-                </div>
+    return () => observer.disconnect();
+  }, []);
 
-                <div className="section">
-                    <h2 className="section-title">
-                        <i className="fas fa-user-lock"></i>
-                        AUTH 
-                    </h2>
-                    <div className="api-grid">
-                        <APICard 
-                            number="1"
-                            title="Register User"
-                            description="Create a new user account with email, password, and profile information."
-                            method="POST"
-                            endpoint="/api/auth/signup"
-                            img={'/register-social-media-api.png'}
-                        />
-                        <APICard 
-                        number="2"
-                        title="Login User"
-                        description="Authenticate a user with email and password."
-                        method="POST"
-                        endpoint="/api/auth/login"
-                        img={'/login-social-media-api.png'}
-                    />
+  return (
+    <div className="api">
+      <div className="container">
+        {/* Header Section */}
+        <header className="header-api">
+          <h1>
+            <i className="fas fa-share-alt"></i> Social Media API
+          </h1>
+          <p>
+            This documentation provides a comprehensive overview of the Social Media API, including endpoints, request methods, parameters, and response formats. The API allows developers to integrate features like authentication, posts, profiles, and notifications.
+          </p>
+        </header>
 
-                        <APICard 
-                            number="3"
-                            title="Get Me"
-                            description="Retrieve the profile information of the currently authenticated user."
-                            method="GET"
-                            endpoint="/api/auth/me"
-                            img={'/getme-social-media-api.png'}
-                            authRequired={true}
-                    />
-                        <APICard 
-                            number="4"
-                            title="Logout User"
-                            description="Log out the currently authenticated user."
-                            method="POST"
-                            endpoint="/api/auth/logout"
-                            img={'/Logout-social-media-api.png'}
-                            authRequired={true}
-                            />
-                    <div/>
-                </div>
-                    
-                    </div>
+        {/* Base URL */}
+        <section className="base-url">
+          <h3>
+            <i className="fas fa-globe"></i> Base URL
+          </h3>
+          <code>{baseUrl}</code>
+        </section>
 
-                <div className="section">
-                    <h2 className="section-title">
-                        <i className="fas fa-user"></i>
-                        Users 
-                    </h2>
-                    <div className="api-grid">
-                        <APICard 
-                            number="1"
-                            title="Get User Profile"
-                            description="Retrieve the profile information of a user by their username."
-                            method="GET"
-                            endpoint="/api/users/profile/{username}"
-                            img={'/get-user-social-media-api.png'}
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="2"
-                            title="Suggest Users"
-                            description="Get a list of suggested users based on the current user's interests and interactions."
-                            method="GET"
-                            endpoint="/api/users/suggested"
-                            img={'/suggested-users-social-media-api.png'}
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="3"
-                            title="Follow and Unfollow User"
-                            description="Get a list of suggested users based on the current user's interests and interactions."
-                            method="GET"
-                            endpoint="/api/users/suggested"
-                            img={'/follow-user-social-media-api.png'}
-                            authRequired={true}
-                        />
-                        <APICard 
-                            number="4"
-                            title="Update User Profile"
-                            description="Update the profile information of the currently authenticated user."
-                            method="POST"
-                            endpoint="/api/users/update"
-                            img={'/updated-user-social-media-api.png'}
-                            authRequired={true}
-                        />
+        {/* ===== AUTH SECTION ===== */}
+        <section className="section">
+          <h2 className="section-title">
+            <i className="fas fa-user-lock"></i> AUTH
+          </h2>
+          <div className="api-grid">
+            <APICard number="1" title="Register User" description="Create a new user account with email, password, and profile information." method="POST" endpoint="/auth/register" />
+            <APICard number="2" title="Login User" description="Authenticate a user with email and password." method="POST" endpoint="/auth/login" />
+            <APICard number="3" title="Get Me" description="Retrieve profile info of the authenticated user." method="GET" endpoint="/auth/me" authRequired />
+            <APICard number="4" title="Update Me" description="Update the profile info of the authenticated user." method="PATCH" endpoint="/auth/update-me" authRequired />
+            <APICard number="5" title="Verify Email" description="Verify a user's email address using a verification code." method="POST" endpoint="/auth/verify-email" img="/verifyEmail.png" />
+            <APICard number="6" title="Resend Verification Code" description="Resend the email verification code." method="POST" endpoint="/auth/resend-verification" />
+            <APICard number="7" title="Change Password" description="Change the user's password." method="POST" endpoint="/auth/reset-password" img="/change-password.png" authRequired />
+            <APICard number="8" title="Forget Password" description="Send reset code to the user's email." method="POST" endpoint="/forget-password" img="/forget-password.png" />
+            <APICard number="9" title="Reset Password" description="Reset password using reset code." method="POST" endpoint="/auth/reset-forget-password" img="/reset-password.png" />
+            <APICard number="10" title="Logout User" description="Logout the authenticated user." method="POST" endpoint="/auth/logout" authRequired />
+            <APICard number="11" title="Delete Me" description="Delete the authenticated user account." method="DELETE" endpoint="/auth/delete-me" authRequired />
+          </div>
+        </section>
 
-                    <div/>
-                </div>
-                    
-                    </div>
-                <div className="section">
-                    <h2 className="section-title">
-                        <i className="fas fa-file-alt"></i>
-                        Posts
-                    </h2>
-                    <div className="api-grid">
-                        <APICard 
-                            number="1"
-                            title="Get All Posts"
-                            description="Retrieve a list of all posts made by users."
-                            method="GET"
-                            endpoint="/api/users/posts/all"
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="2"
-                            title="Get Following Posts"
-                            description="Retrieve a list of posts made by users that the currently authenticated user follows."
-                            method="GET"
-                            endpoint="/api/users/posts/following"
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="3"
-                            title="Get User Posts"
-                            description="Retrieve a list of posts made by a specific user."
-                            method="GET"
-                            endpoint="/api/posts/user/{username}"
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="4"
-                            title="Create Post"
-                            description="Create a new post with text and optional media."
-                            method="POST"
-                            endpoint="/api/posts/create"
-                            img={'/create-post-social-media-api.png'}
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="5"
-                            title="Like & Unlike Post"
-                            description="Like or unlike a post by its ID."
-                            method="POST"
-                            endpoint="/api/posts/like/{postId}"
-                            img={'/like-post-social-media-api.png'}
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="6"
-                            title="Add Comment"
-                            description="Add a comment to a post by its ID."
-                            method="POST"
-                            endpoint="/api/posts/comment/{postId}"
-                            img={'/add-comment-social-media-api.png'}
-                            authRequired={true}
-                            />
-                        <APICard 
-                            number="7"
-                            title="Delete Post"
-                            description="Delete a post by its ID."
-                            method="DELETE"
-                            endpoint="/api/posts/{postId}"
-                            img={'/delete-post-social-media-api.png'}
-                            authRequired={true}
-                            />
-                        
+        {/* ===== USERS SECTION ===== */}
+        <section className="section">
+          <h2 className="section-title">
+            <i className="fas fa-user"></i> USERS
+          </h2>
+          <div className="api-grid">
+            <APICard number="1" title="Get User Profile" description="Retrieve a user's profile by username." method="GET" endpoint="/users/profile/{username}" authRequired />
+            <APICard number="2" title="Suggested Users" description="Get suggested users for the logged-in user." method="GET" endpoint="/users/suggested" authRequired />
+            <APICard number="3" title="Follow / Unfollow User" description="Follow or unfollow another user by ID." method="POST" endpoint="/users/follow/{userId}" authRequired />
+          </div>
+        </section>
 
-                    <div/>
-                </div>
-                    
-                    </div>
-            </div>
-        </div>
-    );
+        {/* ===== POSTS SECTION ===== */}
+        <section className="section">
+          <h2 className="section-title">
+            <i className="fas fa-file-alt"></i> POSTS
+          </h2>
+          <div className="api-grid">
+            <APICard number="1" title="Get All Posts" description="Retrieve all posts from all users." method="GET" endpoint="/posts/all" authRequired />
+            <APICard number="2" title="Get Following Posts" description="Get posts from followed users." method="GET" endpoint="/posts/following" authRequired />
+            <APICard number="3" title="Get User Posts" description="Retrieve posts by a specific user." method="GET" endpoint="/posts/user/{username}" authRequired />
+            <APICard number="4" title="Create Post" description="Create a new post with optional media." method="POST" endpoint="/posts/create" authRequired />
+            <APICard number="5" title="Like / Unlike Post" description="Like or unlike a post by ID." method="POST" endpoint="/posts/like/{postId}" authRequired />
+            <APICard number="6" title="Add Comment" description="Add a comment to a post by ID." method="POST" endpoint="/posts/comment/{postId}" authRequired />
+            <APICard number="7" title="Delete Post" description="Delete a post by ID." method="DELETE" endpoint="/posts/{postId}" authRequired />
+          </div>
+        </section>
+
+        {/* ===== NOTIFICATIONS SECTION ===== */}
+        <section className="section">
+          <h2 className="section-title">
+            <i className="fas fa-bell"></i> NOTIFICATIONS
+          </h2>
+          <div className="api-grid">
+            <APICard number="1" title="Get Notifications" description="Get notifications for the authenticated user." method="GET" endpoint="/notifications" authRequired />
+            <APICard number="2" title="Read Notification" description="Mark a notification as read by ID." method="PATCH" endpoint="/notifications/{notification_id}/read" authRequired />
+            <APICard number="3" title="Mark All as Read" description="Mark all notifications as read." method="PATCH" endpoint="/notifications/mark-all-read" authRequired />
+            <APICard number="4" title="Delete Notification" description="Delete a specific notification by ID." method="DELETE" endpoint="/notifications/{notification_id}" authRequired />
+            <APICard number="5" title="Delete All Notifications" description="Delete all notifications for the user." method="DELETE" endpoint="/notifications" authRequired />
+          </div>
+        </section>
+      </div>
+    </div>
+  );
 };
 
-export default SocailMediaAPI;
+export default SocialMediaAPI;
