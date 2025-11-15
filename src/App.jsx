@@ -9,6 +9,7 @@ import SocailMediaAPI from "./Pages/SocialMediaAPI/SocialMediaAPI"
 import Contact from "./Pages/Contact/Contact"
 import HabitTrackerAPI from "./Pages/HabitTracker/HabitTrackerAPI"
 import ToDoListAPI from "./Pages/ToDoListAPI/ToDoListAPI"
+import AdvancedAUTHAPI from "./Pages/Advanced AUTH API/AdvancedAUTHAPI"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/social-media-api" element={<SocailMediaAPI />} />
         <Route path="/habit-tracker-api" element={<HabitTrackerAPI />} />
         <Route path="/to-do-list-api" element={<ToDoListAPI />} />
+        <Route path="/advanced-auth-api" element={<AdvancedAUTHAPI />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <div className="divider" />
