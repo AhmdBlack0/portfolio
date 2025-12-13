@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HabitTrackerAPI.css';
+import { SiPostman } from "react-icons/si";
 
 const HabitTrackerAPI = () => {
     const [showToast, setShowToast] = useState(false);
@@ -69,6 +70,26 @@ const HabitTrackerAPI = () => {
                 <div className="header-ecommerce-api">
                     <h1><i className="fas fa-calendar-check"></i> Habit Tracker</h1>
                     <p>Habit Tracker API Documentation With Cookies</p>
+                </div>
+
+                <div className="doc-links">
+                    <a
+                    href="https://github.com/AhmdBlack0/habit-tracker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="doc-link"
+                    >
+                    <i className="fab fa-github"></i> GitHub
+                    </a>
+        
+                    <a
+                    href="https://script-6747.postman.co/workspace/dash~90a4e8db-69e4-4ed9-963c-847e0ddb1ace/collection/35971683-39713557-7cfe-43c2-8712-5a1e657d73e0?action=share&creator=35971683&active-environment=35971683-5b978b32-604f-47f9-8160-85905cda486e"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="doc-link postman"
+                    >
+                    <SiPostman className="postman-icon"/> Postman
+                    </a>
                 </div>
 
                 <div className="base-url">

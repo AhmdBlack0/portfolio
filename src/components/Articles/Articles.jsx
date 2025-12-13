@@ -4,11 +4,11 @@ import './Articles.css'
 function Articles() {
     return (
         <div className='articles in-container'>
-            <Link to={'/ecommerce-api'} className='article'>
-                <h3>E-commerce API Documentation</h3>
-                <p>Complete guide to building and implementing a robust e-commerce API with Node.js and Express.</p>
+            <Link to={'/advanced-auth-api'} className='article'>
+                <h3>Advanced AUTH API</h3>
+                <p>Complete guide to building and implementing a robust Advanced AUTH API with Node.js and Express.</p>
                 <div className='article-meta'>
-                    <span>5 min read</span>
+                    <span>10 min read</span>
                     <span className='read-more'>Read more</span>
                 </div>
             </Link>
@@ -20,14 +20,6 @@ function Articles() {
                     <span className='read-more'>Read more</span>
                 </div>
             </Link>
-            <Link to={'/to-do-list-api'} className='article'>
-                <h3>To Do List API Documentation With Cookies</h3>
-                <p>Complete guide to building and implementing a robust To Do List API with Node.js and Express.</p>
-                <div className='article-meta'>
-                    <span>5 min read</span>
-                    <span className='read-more'>Read more</span>
-                </div>
-            </Link>
             <Link to={'/habit-tracker-api'} className='article'>
                 <h3>Habit Tracker API Documentation With Cookies</h3>
                 <p>Complete guide to building and implementing a robust Habit Tracker API with Node.js and Express.</p>
@@ -36,11 +28,19 @@ function Articles() {
                     <span className='read-more'>Read more</span>
                 </div>
             </Link>
-            <Link to={'/advanced-auth-api'} className='article'>
-                <h3>Advanced AUTH API</h3>
-                <p>Complete guide to building and implementing a robust Advanced AUTH API with Node.js and Express.</p>
+            <Link to={'/to-do-list-api'} className='article'>
+                <h3>To Do List API Documentation With Cookies</h3>
+                <p>Complete guide to building and implementing a robust To Do List API with Node.js and Express.</p>
                 <div className='article-meta'>
-                    <span>10 min read</span>
+                    <span>5 min read</span>
+                    <span className='read-more'>Read more</span>
+                </div>
+            </Link>
+            <Link to={'/ecommerce-api'} className='article'>
+                <h3>E-commerce API Documentation</h3>
+                <p>Complete guide to building and implementing a robust e-commerce API with Node.js and Express.</p>
+                <div className='article-meta'>
+                    <span>5 min read</span>
                     <span className='read-more'>Read more</span>
                 </div>
             </Link>

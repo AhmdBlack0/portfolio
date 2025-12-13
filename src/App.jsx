@@ -20,11 +20,11 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
-        <Route path="/ecommerce-api" element={<EcommerceAPI />} />
         <Route path="/social-media-api" element={<SocailMediaAPI />} />
         <Route path="/habit-tracker-api" element={<HabitTrackerAPI />} />
-        <Route path="/to-do-list-api" element={<ToDoListAPI />} />
         <Route path="/advanced-auth-api" element={<AdvancedAUTHAPI />} />
+        <Route path="/ecommerce-api" element={<EcommerceAPI />} />
+        <Route path="/to-do-list-api" element={<ToDoListAPI />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <div className="divider" />

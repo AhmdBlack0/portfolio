@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './EcommerceAPI.css';
+import { SiPostman } from "react-icons/si";
+
 
 const EcommerceAPI = () => {
     const [showToast, setShowToast] = useState(false);
 
-    const baseUrl = 'https://e-commerce-api-kmhw.vercel.app';
+    const baseUrl = 'https://e-commerce-api-kmhw.vercel.app/api';
 
 
     useEffect(() => {
@@ -71,11 +73,31 @@ const EcommerceAPI = () => {
                     <h1><i className="fas fa-shopping-cart"></i> E-commerce API</h1>
                     <p>Comprehensive RESTful API for managing products, users, authentication, and e-commerce operations</p>
                 </div>
+                <div className="doc-links">
+                    <a
+                    href="https://github.com/AhmdBlack0/E-commerceAPI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="doc-link"
+                    >
+                    <i className="fab fa-github"></i> GitHub
+                    </a>
+        
+                    <a
+                    href="https://script-6747.postman.co/workspace/dash~90a4e8db-69e4-4ed9-963c-847e0ddb1ace/collection/35971683-1927e92f-7536-46b1-9339-ef9fbd17c399?action=share&creator=35971683&active-environment=35971683-5b978b32-604f-47f9-8160-85905cda486e"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="doc-link postman"
+                    >
+                    <SiPostman className="postman-icon"/> Postman
+                    </a>
+                </div>
 
                 <div className="base-url">
                     <h3><i className="fas fa-globe"></i> Base URL</h3>
                     <code>{baseUrl}</code>
                 </div>
+
 
                 <div className="section">
                     <h2 className="section-title">
@@ -88,7 +110,7 @@ const EcommerceAPI = () => {
                             title="Get All Products"
                             description="Retrieve a list of all products available in the store with pagination support."
                             method="GET"
-                            endpoint="/api/products"
+                            endpoint="/products"
                         />
                         
                         <APICard 
@@ -96,7 +118,7 @@ const EcommerceAPI = () => {
                             title="Get Single Product"
                             description="Retrieve detailed information about a specific product by its ID."
                             method="GET"
-                            endpoint="/api/products/{productId}"
+                            endpoint="/products/{productId}"
                             />
                         
                         <APICard 
@@ -107,7 +129,7 @@ const EcommerceAPI = () => {
                                 \n**Optional fields:** imageUrl, tags, size, color. 
                                 \n\nFor the image, provide a valid URL from the internet. File upload support may be added later.`}
                                 method="POST"
-                                endpoint="/api/products"
+                                endpoint="/products"
                             authRequired={true}
                             img={'/addProduct.png'}
                                 />
@@ -118,7 +140,7 @@ const EcommerceAPI = () => {
                             title="Update Product"
                             description="Update existing product information. Supports partial updates using PATCH method."
                             method="PATCH"
-                            endpoint="/api/products/{productId}"
+                            endpoint="/products/{productId}"
                             authRequired={true}
                             />
                         
@@ -127,7 +149,7 @@ const EcommerceAPI = () => {
                             title="Delete Product"
                             description="Remove a product from the inventory permanently. This action cannot be undone."
                             method="DELETE"
-                            endpoint="/api/products/{productId}"
+                            endpoint="/products/{productId}"
                             authRequired={true}
                             />
                     </div>
@@ -151,7 +173,7 @@ const EcommerceAPI = () => {
                             - password
                             - role (allowed values: 'admin' or 'user', default: 'user')`}
                             method="POST"
-                            endpoint="/api/register"
+                            endpoint="/register"
                             img={'/register-api.png'}
                     />
 
@@ -165,7 +187,7 @@ const EcommerceAPI = () => {
                         - email
                         - password`}
                         method="POST"
-                            endpoint="/api/login"
+                            endpoint="/login"
                             img={'/login-api.png'}
                     />
 
@@ -175,7 +197,7 @@ const EcommerceAPI = () => {
                             title="Get All Users"
                             description="Retrieve a list of all registered users. Requires valid authentication token."
                             method="GET"
-                            endpoint="/api/users"
+                            endpoint="/users"
                             authRequired={true}
                         />
                         
@@ -184,7 +206,7 @@ const EcommerceAPI = () => {
                             title="Delete User"
                             description="Remove a user account from the system. Only administrators can perform this action."
                             method="DELETE"
-                            endpoint="/api/users/{userId}"
+                            endpoint="/users/{userId}"
                             adminOnly={true}
                         />
                     </div>
@@ -202,7 +224,7 @@ const EcommerceAPI = () => {
                         title="Get Cart Items"
                         description={`Retrieve all items in the user's shopping cart. Requires authentication.`}
                         method="GET"
-                            endpoint="/api/users/{userId}/cart"
+                            endpoint="/users/{userId}/cart"
                             authRequired={true}
 
                     />
@@ -216,7 +238,7 @@ const EcommerceAPI = () => {
                         - productId
                         - quantity (default: 1)`}
                         method="POST"
-                            endpoint="/api/users/{userId}/cart"
+                            endpoint="/users/{userId}/cart"
                             img={'/addToCart.png'}
                             authRequired={true}
 
@@ -228,7 +250,7 @@ const EcommerceAPI = () => {
                             title="Update Cart Item"
                             description={`Update the quantity of a specific item in the user's cart.`}
                             method="PATCH"
-                            endpoint="/api/users/:userId/cart/:productId"
+                            endpoint="/users/:userId/cart/:productId"
                             img={'/updatedCart.png'}
                             authRequired={true}
                         />
@@ -238,7 +260,7 @@ const EcommerceAPI = () => {
                             title="Delete Cart Item"
                             description={`Remove a specific item from the user's cart.`}
                             method="DELETE"
-                            endpoint="/api/users/:userId/cart/:productId"
+                            endpoint="/users/:userId/cart/:productId"
                             authRequired={true}
                         />
 
@@ -258,7 +280,7 @@ const EcommerceAPI = () => {
                             title="Get WatchList Items"
                             description={`Retrieve all items in the user's watchList.`}
                             method="GET"
-                            endpoint="/api/users/{userId}/watchList"
+                            endpoint="/users/{userId}/watchList"
                             authRequired={true}
                         />
 
@@ -268,7 +290,7 @@ const EcommerceAPI = () => {
                             description={`Add a product to the user's watchList. fields:
                             - productId`}
                             method="POST"
-                            endpoint="/api/users/{userId}/watchList"
+                            endpoint="/users/{userId}/watchList"
                             authRequired={true}
                             img={'/addToWatchList.png'}
                         />
@@ -278,7 +300,7 @@ const EcommerceAPI = () => {
                             title="Delete Item From WatchList"
                             description={`Remove a specific item from the user's watchList.`}
                             method="DELETE"
-                            endpoint="/api/users/{userId}/watchList/{productId}"
+                            endpoint="/users/{userId}/watchList/{productId}"
                             authRequired={true}
                         />
                         

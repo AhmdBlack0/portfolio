@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./SocialMediaAPI.css";
+import { SiPostman } from "react-icons/si";
 
 // ✅ Reusable API Card Component
 const APICard = ({ number, title, description, method, img, endpoint, authRequired, adminOnly }) => (
@@ -66,6 +67,26 @@ const SocialMediaAPI = () => {
             This documentation provides a comprehensive overview of the Social Media API, including endpoints, request methods, parameters, and response formats. The API allows developers to integrate features like authentication, posts, profiles, and notifications.
           </p>
         </header>
+
+        <div className="doc-links">
+          <a
+            href="https://github.com/AhmdBlack0/social-media-api-nodejs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="doc-link"
+          >
+            <i className="fab fa-github"></i> GitHub
+          </a>
+
+          <a
+            href="https://script-6747.postman.co/workspace/dash~90a4e8db-69e4-4ed9-963c-847e0ddb1ace/collection/35971683-948c99f7-809a-478a-9f8e-38d670e02388?action=share&creator=35971683&active-environment=35971683-5b978b32-604f-47f9-8160-85905cda486e"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="doc-link postman"
+          >
+            <SiPostman className="postman-icon"/> Postman
+          </a>
+        </div>
 
         {/* Base URL */}
         <section className="base-url">

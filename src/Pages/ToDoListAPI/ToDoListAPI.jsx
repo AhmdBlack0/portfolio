@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SiPostman } from "react-icons/si";
 
 const ToDoListAPI = () => {
     const [showToast, setShowToast] = useState(false);
@@ -68,6 +69,26 @@ const ToDoListAPI = () => {
                 <div className="header-ecommerce-api">
                     <h1><i className="fas fa-calendar-check"></i> To Do List API</h1>
                     <p>To Do List API Documentation With Cookies</p>
+                </div>
+
+                <div className="doc-links">
+                    <a
+                    href="https://github.com/AhmdBlack0/To-Do-List-Nodejs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="doc-link"
+                    >
+                    <i className="fab fa-github"></i> GitHub
+                    </a>
+        
+                    <a
+                    href="https://script-6747.postman.co/workspace/dash~90a4e8db-69e4-4ed9-963c-847e0ddb1ace/collection/35971683-289857c1-92ce-4f86-a1f8-92c15defb7db?action=share&creator=35971683&active-environment=35971683-5b978b32-604f-47f9-8160-85905cda486e"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="doc-link postman"
+                    >
+                    <SiPostman className="postman-icon"/> Postman
+                    </a>
                 </div>
 
                 <div className="base-url">
