@@ -25,10 +25,9 @@ function Projects() {
         <div className="content in-container">
             <div className="content-left-sec">
                 <button className={tech === "all" ? "active" : ""} onClick={() => setTech("all")}>All Projects</button>
-                <button className={tech === "html" ? "active" : ""} onClick={() => setTech("html")}>HTML & CSS</button>
-                <button className={tech === "javascript" ? "active" : ""} onClick={() => setTech("javascript")}>JavaScript</button>
-                <button className={tech === "react" ? "active" : ""} onClick={() => setTech("react")}>React</button>
-                <button className={tech === "node" ? "active" : ""} onClick={() => setTech("node")}>Node & Express</button>
+                <button className={tech === "blockchain" ? "active" : ""} onClick={() => setTech("blockchain")}>Block Chain</button>
+                <button className={tech === "nodejs" ? "active" : ""} onClick={() => setTech("nodejs")}>NodeJS & Express</button>
+                <button className={tech === "telegram" ? "active" : ""} onClick={() => setTech("telegram")}>Telegram Bot</button>
             </div>
             <div className="content-right-sec">
                 {projects.length > 0 ? (
