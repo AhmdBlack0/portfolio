@@ -8,6 +8,57 @@ import { SiExpress } from "react-icons/si";
 
 const projects = [
   {
+    id: 13,
+    title: "BigBook One",
+    image: "/big-book.png",
+    url: "https://bigbookone.com/",
+    by: "nodejs",
+    icons: [FaNodeJs, SiMongodb, SiExpress],
+    github: "",
+    description: "A powerful scientific content search platform covering Islamic fields such as Arabic language, Quranic interpretation (Tafsir), Hadith, and more. Built for researchers and students seeking reliable references.",
+    tags: ["Node.js", "MongoDB", "Express", "Search Engine", "Islamic Content"],
+    features: [
+      "Full-text search across multiple Islamic disciplines",
+      "Covers Tafsir, Hadith, Arabic language and more",
+      "Fast and accurate results from curated scientific sources",
+      "Clean reading interface optimized for long-form content"
+    ]
+  },
+  {
+    id: 14,
+    title: "Moshtak",
+    image: "/moshtak.png",
+    url: "https://moshtak.com/",
+    by: "nodejs",
+    icons: [FaNodeJs, SiMongodb, SiExpress],
+    github: "",
+    description: "A comprehensive travel platform specializing in Hajj, Umrah, and flight bookings. Helps pilgrims and travelers easily find and book their spiritual journeys with a seamless experience.",
+    tags: ["Node.js", "MongoDB", "Express", "Travel Platform", "Booking System"],
+    features: [
+      "Hajj & Umrah package search and booking system",
+      "Flight search with flexible filters and availability",
+      "Secure user accounts with booking history tracking",
+      "Streamlined checkout and reservation management"
+    ]
+  },
+  {
+    id: 15,
+    title: "Mihad Cowhide",
+    image: "/mihad.png",
+    url: "https://mihadcowhide.com/",
+    by: "nodejs",
+    icons: [FaNodeJs, SiMongodb, SiExpress],
+    github: "",
+    description: "An e-commerce platform for selling premium carpets and cowhide leather products. Features a rich product catalog with detailed listings, smooth browsing, and a secure purchasing flow.",
+    tags: ["Node.js", "MongoDB", "Express", "E-commerce", "Carpets & Leather"],
+    features: [
+      "Full product catalog for carpets and cowhide leather items",
+      "Detailed product pages with images and specifications",
+      "Secure user accounts and order management",
+      "Smooth shopping cart and checkout experience"
+    ]
+  },
+  {
     id: 9,
     title: "Habit Tracker API",
     image: "/habit-tracker-api-image.jpg",
