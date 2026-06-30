@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './HabitTrackerAPI.css';
+import '../APIDoc.css';
 import { SiPostman } from "react-icons/si";
 
 const HabitTrackerAPI = () => {

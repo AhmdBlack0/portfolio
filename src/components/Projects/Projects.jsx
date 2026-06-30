@@ -4,6 +4,7 @@ import "./Projects.css";
 import { Link } from "react-router-dom";
 import { IoIosLink } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 
 
@@ -33,9 +34,13 @@ function Projects() {
                 {projects.length > 0 ? (
                     projects.map(project => (
                         <div key={project.id} className="project-card">
-                            <img className="project-image" src={project.image} />
+                            <div className="project-image-wrapper">
+                                <span className="project-card-category">{project.by}</span>
+                                <img className="project-image" src={project.image} alt={project.title} />
+                            </div>
                             <div className="project-info">
                                 <h3>{project.title}</h3>
+                                <p className="project-card-description">{project.description}</p>
                                 <div className="project-icons">
                                     {project.icons.map((Icon, index) => (
                                         <Icon key={index} />
@@ -43,9 +48,23 @@ function Projects() {
                                 </div>
                             </div>
                             <div className="card-links">
-                                <Link title="Live Demo" target="_blank" to={`${project.url}`}><IoIosLink /></Link>
-                                <Link title="Github" target="_blank" to={`${project.github}`}><FaGithub /></Link>
-
+                                {project.url.startsWith("http") ? (
+                                    <a title="Live Demo" href={project.url} target="_blank" rel="noopener noreferrer">
+                                        <IoIosLink />
+                                    </a>
+                                ) : (
+                                    <Link title="Live Demo" to={project.url}>
+                                        <IoIosLink />
+                                    </Link>
+                                )}
+                                {project.github && (
+                                    <a title="Github" href={project.github} target="_blank" rel="noopener noreferrer">
+                                        <FaGithub />
+                                    </a>
+                                )}
+                                <Link title="View More" to={`/project/${project.id}`} className="view-more-link">
+                                    <FaArrowRight />
+                                </Link>
                             </div>
                         </div>
                     ))

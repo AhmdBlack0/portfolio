@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./AdvancedAUTHAPI.css";
+import "../APIDoc.css";
 import { SiPostman } from "react-icons/si";
 
 
