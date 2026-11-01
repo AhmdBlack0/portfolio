@@ -1,10 +1,5 @@
-import { FaHtml5 } from "react-icons/fa";
-import { IoLogoCss3 } from "react-icons/io";
-import { FaReact } from "react-icons/fa";
-import { FaJsSquare } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiMongodb, SiExpress, SiPostgresql } from "react-icons/si";
 
 const projects = [
   {
@@ -30,10 +25,10 @@ const projects = [
     image: "/moshtak.png",
     url: "https://moshtak.com/",
     by: "nodejs",
-    icons: [FaNodeJs, SiMongodb, SiExpress],
+    icons: [FaNodeJs, SiPostgresql, SiExpress],
     github: "",
     description: "A comprehensive travel platform specializing in Hajj, Umrah, and flight bookings. Helps pilgrims and travelers easily find and book their spiritual journeys with a seamless experience.",
-    tags: ["Node.js", "MongoDB", "Express", "Travel Platform", "Booking System"],
+    tags: ["Node.js", "PostgreSQL", "Express", "Travel Platform", "Booking System"],
     features: [
       "Hajj & Umrah package search and booking system",
       "Flight search with flexible filters and availability",
@@ -47,10 +42,10 @@ const projects = [
     image: "/mihad.png",
     url: "https://mihadcowhide.com/",
     by: "nodejs",
-    icons: [FaNodeJs, SiMongodb, SiExpress],
+    icons: [FaNodeJs, SiPostgresql, SiExpress],
     github: "",
     description: "An e-commerce platform for selling premium carpets and cowhide leather products. Features a rich product catalog with detailed listings, smooth browsing, and a secure purchasing flow.",
-    tags: ["Node.js", "MongoDB", "Express", "E-commerce", "Carpets & Leather"],
+    tags: ["Node.js", "PostgreSQL", "Express", "E-commerce", "Carpets & Leather"],
     features: [
       "Full product catalog for carpets and cowhide leather items",
       "Detailed product pages with images and specifications",

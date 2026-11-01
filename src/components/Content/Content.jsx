@@ -4,7 +4,6 @@ import "./Content.css";
 import { Link } from "react-router-dom";
 import { IoIosLink } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
-import { FaLongArrowAltRight } from "react-icons/fa";
 
 
 
